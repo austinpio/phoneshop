@@ -8,16 +8,18 @@
  * Controller of the phoneshopApp
  */
 angular.module('phoneshopApp')
-  .controller('PhonelistCtrl', function () {
+  .controller('PhonelistCtrl',['$scope','$http', function ($scope,$http) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
 
-    this.phones=[
-    {'name':'Nexus S','snippet':'google phone'},
-    {'name':'Moto E','snippet':'Motorola phone dhummel'}
-    ];
+    $http.get('data/phones.json').success(function(data){
+      $scope.phones=data;
+    });
 
-  });
+
+    $scope.orderProp='age';
+
+  }]);

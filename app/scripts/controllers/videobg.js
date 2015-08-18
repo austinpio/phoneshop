@@ -16,6 +16,6 @@ angular.module('phoneshopApp')
     ];
 
     this.video={
-      id:'Hwey4aEj6GE'
+      id:'xDMP3i36naA'
     };
   });

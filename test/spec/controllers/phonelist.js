@@ -5,8 +5,7 @@ describe('Controller: PhonelistCtrl', function () {
   // load the controller's module
   beforeEach(module('phoneshopApp'));
 
-  var PhonelistCtrl,
-    scope;
+  var PhonelistCtrl,scope,$httpBackend;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
@@ -21,5 +20,7 @@ describe('Controller: PhonelistCtrl', function () {
     expect(PhonelistCtrl.awesomeThings.length).toBe(3);
   });
 
-  it('should check phone list',function(){expect(PhonelistCtrl.phones.length).toBe(2);});
+  it('should check phone list',function(){expect(scope.phones.length).toBe(4);});
+
+  it('default should be age',function(){expect(scope.orderProp).toBe('age');});
 });
