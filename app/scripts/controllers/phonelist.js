@@ -9,7 +9,7 @@
  */
 angular.module('phoneshopApp')
   .controller('PhonelistCtrl',['$scope','$http', function ($scope,$http) {
-    this.awesomeThings = [
+    $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'

@@ -8,7 +8,11 @@ describe('Controller: PhonelistCtrl', function () {
   var PhonelistCtrl,scope,$httpBackend;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope,_$httpBackend_) {
+
+    $httpBackend=_$httpBackend_;
+
+    $httpBackend.expectGET('data/phones.json').respond([{'name':'Nexus S'},{'name':'sony xperia'}]);
     scope = $rootScope.$new();
     PhonelistCtrl = $controller('PhonelistCtrl', {
       $scope: scope
@@ -17,10 +21,21 @@ describe('Controller: PhonelistCtrl', function () {
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(PhonelistCtrl.awesomeThings.length).toBe(3);
+    expect(scope.awesomeThings.length).toBe(3);
   });
 
-  it('should check phone list',function(){expect(scope.phones.length).toBe(4);});
+  it('should check phone list',function(){
+    expect(scope.phones.length).toBe(4);
+  });
 
   it('default should be age',function(){expect(scope.orderProp).toBe('age');});
+
+  it('should pull list of phones XHR',function(){
+    expect(scope.phones).toBeUndefined();
+
+    $httpBackend.flush();
+
+    expect(scope.phones).toEqual([{'name':'Nexus S'},{'name':'sony xperia'}]);
+  });
+
 });
