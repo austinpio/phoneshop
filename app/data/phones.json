@@ -1,6 +1,6 @@
 [
-  {"name":"Moto 360","snippet":"watch","age":3},
-  {"name":"Nexus S","snippet":"google phone","age":2},
-  {"name":"Moto E","snippet":"Motorola phone dhummel","age":1},
-  {"name":"Nokia 1100","snippet":"brick","age":4}
+  {"name":"Moto 360","snippet":"watch","age":3,"imageUrl":"images/Moto-360-main.png"},
+  {"name":"Nexus S","snippet":"google phone","age":2,"imageUrl":"images/nexus_s.jpg"},
+  {"name":"Moto E","snippet":"Motorola phone dhummel","age":1,"imageUrl":"images/moto_e.jpeg"},
+  {"name":"Nokia 1100","snippet":"brick","age":4,"imageUrl":"images/nokia_1100.jpg"}
 ]
