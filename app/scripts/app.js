@@ -25,6 +25,12 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/phones',{
+        templateUrl:'views/phone-list.html',
+        controller: 'PhonelistCtrl',
+        controllerAs:'ph'
+      }
+      )
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
