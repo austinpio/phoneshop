@@ -1,0 +1,26 @@
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    {{orderProp}}
+    Search: <input ng-model="query">
+    Sort: <select ng-model="orderProp">
+    <option value="name">Alphabetical</option>
+    <option value="age">Newest</option>
+    <option value="-age">Oldest</option>
+  </select>
+
+    <div class="col-md-10">
+      <ul class="phones">
+        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
+          <a href="#images/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}" onerror="images/yeoman.png"></a>
+          <span>{{phone.name}}</span>
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+      <span>Total Number of Phones={{phones.length}}</span>
+    </div>
+
+  </div>
+</div>
